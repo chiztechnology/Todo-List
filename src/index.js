@@ -42,7 +42,7 @@ document.getElementById('todo-form').addEventListener('submit', (e) => {
   const obj = {
     index: tasks[tasks.length - 1].index + 1,
     description: desc,
-    completed: false
+    completed: false,
   };
   tasks.push(obj);
   // refresh DOM by adding new value on the screen
