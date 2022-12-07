@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry:{
+  entry: {
     index: './src/index.js',
   },
   devServer: {
@@ -16,6 +16,9 @@ module.exports = {
     }),
   ],
   output: {
+    path: path.resolve(__dirname, 'dist'),
+    // filename: '[name].js',
+    assetModuleFilename: './src/resync-icon.png',
     clean: true,
   },
   optimization: {
@@ -28,8 +31,12 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.png/,
-        type: 'asset/resource',
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
     ],
   },
