@@ -39,16 +39,15 @@ window.onload = () => {
 document.getElementById('todo-form').addEventListener('submit', (e) => {
   e.preventDefault();
   const desc = document.getElementById('todo-desc').value;
-  const obj = new Object(
-    {
-      index: tasks[tasks.length - 1].index + 1,
-      description: desc,
-      completed: false
-    })
+  const obj = {
+    index: tasks[tasks.length - 1].index + 1,
+    description: desc,
+    completed: false
+  };
   tasks.push(obj);
   // refresh DOM by adding new value on the screen
-})
+});
 
 document.getElementById('clear-completed').addEventListener('click', (e) => {
   e.preventDefault();
-})
+});
