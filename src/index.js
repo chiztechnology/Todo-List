@@ -20,9 +20,6 @@ const tasks = [
   },
 ];
 
-// document.querySelector('.resync-icon').src = ResyncIcon;
-// document.querySelectorAll('.option-icon').src = OptionIcon;
-
 window.onload = () => {
   // fetch tasks
   tasks.forEach((task) => {

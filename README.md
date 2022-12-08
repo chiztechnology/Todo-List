@@ -5,34 +5,13 @@ Simple TODO List project using webpack and ES6 Syntax
 
 <a name="readme-top"></a>
 
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-After you're finished please remove all the comments and instructions!
--->
-
 <div align="center">
   <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Awesome books</b></h3>
-This repository is for the activity Module 2 week1 "Awesome books: plain JavaScript with objects".
-In this project, we built a basic website that allows users to add/remove books from a list. we achieved it that by using JavaScript objects and arrays to dynamically modify the DOM and add basic events.
+  <h3><b>Todo List app</b></h3>
+This repository is for the activity Module 2 week 3 "Todo List: using Webpack".
+In this project, we built a simple todolist that allows users to add/remove tasks or mark them as finished from a list. we achieved it that by using JavaScript objects and arrays to dynamically modify the DOM and add basic events ; ES6; Webpack.
 
 </div>
 
@@ -43,7 +22,6 @@ In this project, we built a basic website that allows users to add/remove books 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
 - [👥 Authors](#authors)
@@ -67,8 +45,9 @@ In this project, we built a basic website that allows users to add/remove books 
 
 > Some features of the project
 
-- **[Add books]**
-- **[Remove books from list]**
+- **[Add Task]**
+- **[Remove Task from list]**
+- **[Mark Task as finished]**
 - **[Fetch data from local storage]**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -91,7 +70,7 @@ open `cmd` in your local computer ;
 
 Clone this repository to your desired folder:
 
-using this command  `git clone https://github.com/elafildecolor/awesome-books`
+using this command  `git clone https://github.com/chiztechnology/Todo-List`
 
 ### Start the project
 
@@ -110,13 +89,6 @@ Enter the follow code to run the project locally:
 - GitHub: [@chiztechnology](https://github.com/chiztechnology)
 - Twitter: [@israelchizungu](https://twitter.com/israelchizungu)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/israel-chizungu)
-
-
-👤 **Paul Sucre**
-
-- GitHub: [@elafildecolor](https://github.com/elafildecolor)
-- Twitter: [@elafildecolor](https://twitter.com/elafildecolor)
-- LinkedIn: [elafildecolor](https://linkedin.com/in/elafildecolor)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
