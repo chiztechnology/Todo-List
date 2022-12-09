@@ -1,7 +1,7 @@
 import './styles/styles.css';
 import { loadTasks, saveTask } from './modules/Save-and-load.js';
 import { addTask, showTask } from './modules/tasks.js';
-import { clearCompleted } from './modules/clear-completed-task.js';
+import clearCompleted from './modules/clear-completed-task.js';
 
 let tasks = [];
 
