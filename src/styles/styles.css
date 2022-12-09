@@ -16,7 +16,7 @@ body {
   border-width: 1px;
   border-style: solid;
   border-radius: 1em;
-  padding:10px;
+  padding: 10px;
 }
 
 .container-head {
@@ -45,7 +45,6 @@ body {
   outline: none;
   border: none;
 }
-
 
 .footerTodo {
   width: 375px;
@@ -96,7 +95,7 @@ body {
 
 .task-btn {
   background-color: white;
-  border :none;
+  border: none;
   font-size: 22px;
   font-weight: bold;
 }
@@ -111,16 +110,18 @@ body {
 
 [contenteditable="true"].single-line {
   white-space: nowrap;
-  width:200px;
+  width: 200px;
   overflow: hidden;
-} 
+}
+
 [contenteditable="true"].single-line br {
-  display:none;
+  display: none;
 
 }
+
 [contenteditable="true"].single-line * {
-  display:inline;
-  white-space:nowrap;
+  display: inline;
+  white-space: nowrap;
 }
 
 #todo-form {

@@ -1,7 +1,7 @@
 import './styles/styles.css';
-import { loadTasks, saveTask } from './modules/Save-and-load';
-import { addTask, showTask } from './modules/tasks';
-import { clearCompleted } from './modules/clear-completed-task';
+import { loadTasks, saveTask } from './modules/Save-and-load.js';
+import { addTask, showTask } from './modules/tasks.js';
+import { clearCompleted } from './modules/clear-completed-task.js';
 
 let tasks = [];
 
@@ -19,11 +19,9 @@ window.addEventListener('load', () => {
   }
 });
 
-
 document.getElementById('todo-form').addEventListener('submit', (e) => {
   e.preventDefault();
-  let tasks = loadTasks('todo-list');
-  console.log(tasks.length);
+  const tasks = loadTasks('todo-list');
   const desc = document.getElementById('todo-desc').value;
   const obj = {
     index: tasks.length === 0 ? 1 : tasks.length + 1,
@@ -31,19 +29,16 @@ document.getElementById('todo-form').addEventListener('submit', (e) => {
     completed: false,
   };
 
-  // adding new value 
+  // adding new value
   addTask(obj, loadTasks('todo-list'));
-    // Refresh The DOM
-    document.querySelector('.listTodo').appendChild(showTask(obj));
-    document.getElementById('todo-desc').value = '';
+  // Refresh The DOM
+  document.querySelector('.listTodo').appendChild(showTask(obj));
+  document.getElementById('todo-desc').value = '';
 });
-
 
 document.getElementById('clear-completed').addEventListener('click', (e) => {
 
   e.preventDefault();
-  console.log(`clear finished tasks`);
-  
   saveTask(clearCompleted(loadTasks('todo-list')), 'todo-list');
   // refresh DOM
   document.querySelector('.listTodo').innerHTML = '';

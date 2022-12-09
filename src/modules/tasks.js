@@ -1,4 +1,4 @@
-import { resetIndex } from './index-resetter.js';
+import resetIndex from './index-resetter.js';
 import { loadTasks, saveTask } from './Save-and-load.js';
 
 export default class Task {
@@ -25,12 +25,10 @@ export const removeTask = (id, tasks) => {
 };
 
 export const showTask = (task) => {
-  let input;
-
   const article = document.createElement('article');
   article.setAttribute('class', 'todo-article');
   const div = document.createElement('div');
-  input = document.createElement('input');
+  const input = document.createElement('input');
   input.setAttribute('type', 'checkbox')
   input.setAttribute('name', 'check');
   input.setAttribute('id', task.index);
@@ -56,35 +54,34 @@ export const showTask = (task) => {
   div.appendChild(span);
   article.appendChild(div);
   article.appendChild(butt);
-  // 
   input.onclick = () => {
     if (task.completed) {
-      let tasks = loadTasks('todo-list');
-      let objIndex = tasks.findIndex((obj => obj.index == task.index));
-      //Update object's description property.
+      const tasks = loadTasks('todo-list');
+      let objIndex = tasks.findIndex(((obj) => obj.index === task.index));
+      // Update object's description property.
       tasks[objIndex].completed = false;
       // update task & refresh DOM
       saveTask(tasks, 'todo-list');
-      span.classList.toggle('finished-task')
+      span.classList.toggle('finished-task');
 
     } else {
-      let tasks = loadTasks('todo-list');
-      let objIndex = tasks.findIndex((obj => obj.index == task.index));
-      //Update object's description property.
+      const tasks = loadTasks('todo-list');
+      const objIndex = tasks.findIndex(((obj) => obj.index === task.index));
+      // Update object's description property.
       tasks[objIndex].completed = true;
       // update task & refresh DOM
       saveTask(tasks, 'todo-list');
-      span.classList.toggle('finished-task')
+      span.classList.toggle('finished-task');
     }
-  }
+  };
 
-  span.oninput = (e) => {
-    let tasks = loadTasks('todo-list');
-    let objIndex = tasks.findIndex((obj => obj.index == task.index));
-    //Update object's description property.
+  span.oninput = () => {
+    const tasks = loadTasks('todo-list');
+    const objIndex = tasks.findIndex(((obj) => obj.index === task.index));
+    // Update object's description property.
     tasks[objIndex].description = span.innerText;
     saveTask(tasks, 'todo-list');
-  }
+  };
 
   span.onfocus = () => {
     // edit element
@@ -95,14 +92,13 @@ export const showTask = (task) => {
       removeTask(task.index, loadTasks('todo-list'));
       article.remove();
     }
-  }
+  };
 
   span.onblur = () => {
-    // 
     article.classList.toggle('editing-mode');
     butt.classList.toggle('yellow-bg');
     butt.innerHTML = '&#8942';
-  }
+  };
 
   return article;
 };

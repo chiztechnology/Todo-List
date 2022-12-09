@@ -1,20 +1,17 @@
-import { resetIndex } from "./index-resetter";
+import resetIndex  from './index-resetter.js';
 
 export const clearCompleted = (tasks = []) => {
-  let temp_array = [];
+  const tempArray = [];
   // get completed tasks indexes
   for (let i = 0; i < tasks.length; i++) {
     if (tasks[i].completed) {
-      temp_array.push(tasks[i].index);
+      tempArray.push(tasks[i].index);
     }
   }
 
   // delete values
-  for( let i =0; i< temp_array.length; i++){
-    tasks = tasks.filter((element) => element.index !== temp_array[i])
+  for (let i = 0; i < temp_array.length; i++) {
+    tasks = tasks.filter((element) => element.index !== tempArray[i]);
   }
-  
-  console.table(resetIndex(tasks));
-
   return resetIndex(tasks);
 }
