@@ -1,4 +1,4 @@
-import { resetIndex } from './index-resetter.js';
+import resetIndex from './index-resetter.js';
 import { loadTasks, saveTask } from './Save-and-load.js';
 
 export default class Task {
