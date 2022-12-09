@@ -29,7 +29,7 @@ export const showTask = (task) => {
   article.setAttribute('class', 'todo-article');
   const div = document.createElement('div');
   const input = document.createElement('input');
-  input.setAttribute('type', 'checkbox')
+  input.setAttribute('type', 'checkbox');
   input.setAttribute('name', 'check');
   input.setAttribute('id', task.index);
   input.setAttribute('style', 'margin-right:5px;');
@@ -57,13 +57,12 @@ export const showTask = (task) => {
   input.onclick = () => {
     if (task.completed) {
       const tasks = loadTasks('todo-list');
-      let objIndex = tasks.findIndex(((obj) => obj.index === task.index));
+      const objIndex = tasks.findIndex(((obj) => obj.index === task.index));
       // Update object's description property.
       tasks[objIndex].completed = false;
       // update task & refresh DOM
       saveTask(tasks, 'todo-list');
       span.classList.toggle('finished-task');
-
     } else {
       const tasks = loadTasks('todo-list');
       const objIndex = tasks.findIndex(((obj) => obj.index === task.index));

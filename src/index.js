@@ -37,7 +37,6 @@ document.getElementById('todo-form').addEventListener('submit', (e) => {
 });
 
 document.getElementById('clear-completed').addEventListener('click', (e) => {
-
   e.preventDefault();
   saveTask(clearCompleted(loadTasks('todo-list')), 'todo-list');
   // refresh DOM

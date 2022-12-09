@@ -1,6 +1,6 @@
-export default resetIndex = (array) => {
-  for (let i = 1; i <= array.length; i++) {
+export default  resetIndex = (array) => {
+  for (let i = 1; i <= array.length; i+1) {
     array[i - 1].index = i;
   }
   return array;
-}
+};

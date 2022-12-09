@@ -116,7 +116,6 @@ body {
 
 [contenteditable="true"].single-line br {
   display: none;
-
 }
 
 [contenteditable="true"].single-line * {
