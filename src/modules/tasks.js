@@ -16,7 +16,6 @@ export const addTask = (element, tasks) => {
   saveTask(tasks, 'todo-list');
 };
 
-
 export const removeTask = (id, tasks) => {
   const newArray = tasks.filter((element) => element.index !== id);
   // reset index before save
