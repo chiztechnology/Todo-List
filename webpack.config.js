@@ -18,7 +18,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     // filename: '[name].js',
-    assetModuleFilename: './src/resync-icon.png',
     clean: true,
   },
   optimization: {
