@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  width: 375px;
+  width: 30%;
   height: auto;
   box-shadow: 2px 4px 2px -2px rgb(202, 201, 201);
 }
@@ -22,55 +22,4 @@ body {
   justify-content: space-between;
   align-items: center;
   font-weight: 300;
-}
-
-.add-todo {
-  width: 375px;
-  height: auto;
-}
-
-.input-element {
-  width: 365px;
-  height: 40px;
-  margin: 5px;
-  padding: 0;
-  border: none;
-}
-
-.input-element :focus {
-  border: none;
-}
-
-.footerTodo {
-  width: 375px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(242, 241, 241);
-}
-
-.listTodo {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.footerTodo a {
-  text-decoration: none;
-  color: rgb(142, 140, 140);
-}
-
-.todo-article {
-  display: flex;
-  justify-content: space-between;
-  height: 40px;
-  margin-top: 5px;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgb(242, 241, 241);
-}
-
-.option-icon {
-  height: 25px;
-  width: auto;
 }
