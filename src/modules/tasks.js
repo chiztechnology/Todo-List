@@ -16,9 +16,10 @@ export const addTask = (element, tasks) => {
   saveTask(tasks, 'todo-list');
 };
 
+
 export const removeTask = (id, tasks) => {
   const newArray = tasks.filter((element) => element.index !== id);
-  // reset inde before save
+  // reset index before save
   // save to local storage
   saveTask(resetIndex(newArray), 'todo-list');
   // then return newArray
@@ -48,6 +49,7 @@ export const showTask = (task) => {
   const butt = document.createElement('button');
   butt.setAttribute('type', 'button');
   butt.setAttribute('class', 'task-btn');
+  // tree dots icon unicode format
   butt.innerHTML = '&#8942';
 
   div.appendChild(input);
@@ -86,6 +88,7 @@ export const showTask = (task) => {
     // edit element
     article.classList.toggle('editing-mode');
     butt.classList.toggle('yellow-bg');
+    // trash icon unicode format
     butt.innerHTML = '&#x1F5D1';
     butt.onclick = () => {
       removeTask(task.index, loadTasks('todo-list'));
