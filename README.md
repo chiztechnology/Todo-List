@@ -78,7 +78,7 @@ Enter the follow code to run the project locally:
 
 ### Live demo
 
-click on [this link](https://chiztechnology.github.io/Todo-list) to view the demo of this project
+click on [this link](https://chiztechnology.github.io/Todo-List/dist/) to view the demo of this project
 
 <!-- AUTHORS -->
 
