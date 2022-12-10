@@ -68,11 +68,17 @@ Clone this repository to your desired folder:
 
 using this command  `git clone https://github.com/chiztechnology/Todo-List`
 
+then install dependencies by running `npm install`
+
 ### Start the project
 
 Enter the follow code to run the project locally:
 
-`cd my-project` then you can run `live-server` or open the `index.html` file from your folders to see the preview in the browser.
+`cd my-project` then you can run `npm start` ; the project will run on port `8080`  or `npm run build`; then open the `index.html` generated in the dist folder.
+
+### Live demo
+
+click on [this link](https://chiztechnology.github.io/Todo-list) to view the demo of this project
 
 <!-- AUTHORS -->
 
