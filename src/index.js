@@ -1,50 +1,56 @@
-import './styles.css';
-// import ResyncIcon from './resync-icon.png';
-import OptionIcon from './OptionIcon.png';
+import './styles/styles.css';
+import { loadTasks, saveTask } from './modules/Save-and-load.js';
+import { addTask, showTask } from './modules/tasks.js';
+import clearCompleted from './modules/clear-completed-task.js';
 
-const tasks = [
-  {
-    index: 1,
-    description: 'Read my lesson',
-    completed: true,
-  },
-  {
-    index: 2,
-    description: 'Wash the dishes',
-    completed: false,
-  },
-  {
-    index: 3,
-    description: 'Running erands in town',
-    completed: false,
-  },
-];
+let tasks = [];
 
-window.onload = () => {
-  // fetch tasks
-  tasks.forEach((task) => {
-    document.querySelector('.listTodo').innerHTML += `<article class="todo-article">
-    <div>
-      <input type="checkbox" name="check" id="checkbox-${task.index}" value="">
-      <label for="checkbox-${task.index}">${task.description}</label>
-    </div>
-    <a href="#"><img src=${OptionIcon} alt="option icon" class="option-icon"></a>
-  </article>`;
-  });
-};
+window.addEventListener('load', () => {
+  // fetch data from local storage
+  tasks = loadTasks('todo-list');
+  if (tasks !== null) {
+    tasks.forEach((element) => {
+      // to be used in the parent component
+      document.querySelector('.listTodo').appendChild(showTask(element));
+    });
+  } else {
+    // no books found
+    tasks = [];
+  }
+});
 
 document.getElementById('todo-form').addEventListener('submit', (e) => {
   e.preventDefault();
+  const tasks = loadTasks('todo-list');
   const desc = document.getElementById('todo-desc').value;
   const obj = {
-    index: tasks[tasks.length - 1].index + 1,
+    index: tasks.length === 0 ? 1 : tasks.length + 1,
     description: desc,
     completed: false,
   };
-  tasks.push(obj);
-  // refresh DOM by adding new value on the screen
+
+  // adding new value
+  addTask(obj, loadTasks('todo-list'));
+  // Refresh The DOM
+  document.querySelector('.listTodo').appendChild(showTask(obj));
+  document.getElementById('todo-desc').value = '';
 });
 
 document.getElementById('clear-completed').addEventListener('click', (e) => {
   e.preventDefault();
+  saveTask(clearCompleted(loadTasks('todo-list')), 'todo-list');
+  // refresh DOM
+  document.querySelector('.listTodo').innerHTML = '';
+
+  tasks = loadTasks('todo-list');
+
+  if (tasks !== null) {
+    tasks.forEach((element) => {
+      // to be used in the parent component
+      document.querySelector('.listTodo').appendChild(showTask(element));
+    });
+  } else {
+    // no books found
+    tasks = [];
+  }
 });

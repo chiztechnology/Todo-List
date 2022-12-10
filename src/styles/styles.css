@@ -12,6 +12,11 @@ body {
   width: 375px;
   height: auto;
   box-shadow: 2px 4px 2px -2px rgb(202, 201, 201);
+  border-color: rgb(202, 201, 201);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 1em;
+  padding: 10px;
 }
 
 .container-head {
@@ -27,17 +32,17 @@ body {
 .add-todo {
   width: 375px;
   height: auto;
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(202, 201, 201);
+  border-bottom-style: solid;
 }
 
 .input-element {
-  width: 365px;
+  width: 90%;
   height: 40px;
   margin: 5px;
   padding: 0;
-  border: none;
-}
-
-.input-element :focus {
+  outline: none;
   border: none;
 }
 
@@ -63,6 +68,7 @@ body {
 .todo-article {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 40px;
   margin-top: 5px;
   border-bottom-width: 1px;
@@ -73,4 +79,51 @@ body {
 .option-icon {
   height: 25px;
   width: auto;
+}
+
+.editing-mode {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  margin-top: 5px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(242, 241, 241);
+  background-color: rgb(247, 234, 150);
+}
+
+.task-btn {
+  background-color: white;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.yellow-bg {
+  background-color: rgb(247, 234, 150);
+}
+
+.finished-task {
+  text-decoration: line-through;
+}
+
+[contenteditable="true"].single-line {
+  white-space: nowrap;
+  width: 200px;
+  overflow: hidden;
+}
+
+[contenteditable="true"].single-line br {
+  display: none;
+}
+
+[contenteditable="true"].single-line * {
+  display: inline;
+  white-space: nowrap;
+}
+
+#todo-form {
+  display: flex;
+  justify-content: space-between;
 }
