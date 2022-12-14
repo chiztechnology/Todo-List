@@ -1,5 +1,3 @@
-const saveTask = (array, key) => {
-  return true;
-};
+const saveTask = () => true;
 
 module.exports = saveTask;
