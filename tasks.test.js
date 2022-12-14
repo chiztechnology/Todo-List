@@ -11,7 +11,7 @@ describe('Add and remove Tasks', () => {
           description: 'Paying water bills',
           completed: false,
         },
-        []
+        [],
       ),
     ).toStrictEqual([
       {
