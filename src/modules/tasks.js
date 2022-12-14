@@ -14,6 +14,7 @@ export const addTask = (element, tasks) => {
   tasks.push(element);
   // save books to local storage
   saveTask(tasks, 'todo-list');
+  return tasks;
 };
 
 export const removeTask = (id, tasks) => {
