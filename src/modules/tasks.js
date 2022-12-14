@@ -23,6 +23,7 @@ export const removeTask = (id, tasks) => {
   // save to local storage
   saveTask(resetIndex(newArray), 'todo-list');
   // then return newArray
+  return newArray;
 };
 
 export const showTask = (task) => {
