@@ -1,6 +1,4 @@
-
-
-const saveTask = ()=>{
+const saveTask = (array, key) => {
   return true;
 };
 
