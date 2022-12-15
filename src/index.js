@@ -40,7 +40,7 @@ document.getElementById('todo-form').addEventListener('submit', (e) => {
 document.getElementById('clear-completed').addEventListener('click', (e) => {
   e.preventDefault();
 
-  saveTask(resetIndex(clearCompleted(loadTasks('todo-list')), 'todo-list'));
+  saveTask(resetIndex(clearCompleted(loadTasks('todo-list'))), 'todo-list');
   // refresh DOM
   document.querySelector('.listTodo').innerHTML = '';
 
