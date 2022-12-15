@@ -90,7 +90,6 @@ export const showTask = (task) => {
 
   span.oninput = () => {
     const tasks = loadTasks('todo-list');
-    // Update object's description property.
     const objIndex = tasks.findIndex(((obj) => obj.index === task.index));
     updateTask(span.innerText, objIndex);
   };
