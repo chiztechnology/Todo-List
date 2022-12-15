@@ -17,9 +17,17 @@ export const addTask = (element, tasks) => {
   return tasks;
 };
 
+export const updateTask = (description, objIndex) => {
+  const tasks = loadTasks('todo-list');
+  tasks[objIndex].description = description;
+  // save updated books to local storage
+  saveTask(tasks, 'todo-list');
+  return tasks;
+};
+
 export const removeTask = (id, tasks) => {
   const newArray = tasks.filter((element) => element.index !== id);
-  // reset index before save
+
   // save to local storage
   saveTask(resetIndex(newArray), 'todo-list');
   // then return newArray
@@ -57,12 +65,14 @@ export const showTask = (task) => {
   div.appendChild(span);
   article.appendChild(div);
   article.appendChild(butt);
+
   input.onclick = () => {
     if (task.completed) {
       const tasks = loadTasks('todo-list');
       const objIndex = tasks.findIndex(((obj) => obj.index === task.index));
       // Update object's description property.
       tasks[objIndex].completed = false;
+      task.completed = false;
       // update task & refresh DOM
       saveTask(tasks, 'todo-list');
       span.classList.toggle('finished-task');
@@ -71,6 +81,7 @@ export const showTask = (task) => {
       const objIndex = tasks.findIndex(((obj) => obj.index === task.index));
       // Update object's description property.
       tasks[objIndex].completed = true;
+      task.completed = true;
       // update task & refresh DOM
       saveTask(tasks, 'todo-list');
       span.classList.toggle('finished-task');
@@ -79,10 +90,9 @@ export const showTask = (task) => {
 
   span.oninput = () => {
     const tasks = loadTasks('todo-list');
-    const objIndex = tasks.findIndex(((obj) => obj.index === task.index));
     // Update object's description property.
-    tasks[objIndex].description = span.innerText;
-    saveTask(tasks, 'todo-list');
+    const objIndex = tasks.findIndex(((obj) => obj.index === task.index));
+    updateTask(span.innerText, objIndex);
   };
 
   span.onfocus = () => {
