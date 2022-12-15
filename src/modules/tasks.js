@@ -24,6 +24,13 @@ export const updateTask = (description, objIndex, tasks) => {
   return tasks;
 };
 
+export const updateStatus = (actualStatus, objIndex, tasks) => {
+  tasks[objIndex].completed = !actualStatus;
+  // save updated books to local storage
+  saveTask(tasks, 'todo-list');
+  return tasks;
+};
+
 export const removeTask = (id, tasks) => {
   const newArray = tasks.filter((element) => element.index !== id);
 
@@ -69,20 +76,16 @@ export const showTask = (task) => {
     if (task.completed) {
       const tasks = loadTasks('todo-list');
       const objIndex = tasks.findIndex(((obj) => obj.index === task.index));
-      // Update object's description property.
-      tasks[objIndex].completed = false;
-      task.completed = false;
+      updateStatus(task.completed, objIndex, tasks );
+      task.completed = !task.completed;
       // update task & refresh DOM
-      saveTask(tasks, 'todo-list');
       span.classList.toggle('finished-task');
     } else {
+      
       const tasks = loadTasks('todo-list');
       const objIndex = tasks.findIndex(((obj) => obj.index === task.index));
-      // Update object's description property.
-      tasks[objIndex].completed = true;
-      task.completed = true;
-      // update task & refresh DOM
-      saveTask(tasks, 'todo-list');
+      updateStatus(task.completed, objIndex, tasks );
+      task.completed = !task.completed;
       span.classList.toggle('finished-task');
     }
   };

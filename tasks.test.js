@@ -1,4 +1,9 @@
-import { addTask, removeTask, updateTask } from './src/modules/tasks.js';
+import {
+  addTask,
+  removeTask,
+  updateTask,
+  updateStatus,
+} from './src/modules/tasks.js';
 
 jest.mock('./src/modules/Save-and-load.js');
 
@@ -48,6 +53,24 @@ describe('Add and remove Tasks', () => {
         index: 0,
         description: 'Pay the bills',
         completed: false,
+      },
+    ]);
+  });
+
+  it('Update complete status', () => {
+    expect(
+      updateStatus(false, 0, [
+        {
+          index: 0,
+          description: 'Paying water bills',
+          completed: false,
+        },
+      ]),
+    ).toStrictEqual([
+      {
+        index: 0,
+        description: 'Paying water bills',
+        completed: true,
       },
     ]);
   });
