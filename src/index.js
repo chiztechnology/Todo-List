@@ -2,7 +2,7 @@ import './styles/styles.css';
 import { loadTasks, saveTask } from './modules/Save-and-load.js';
 import { addTask, showTask } from './modules/tasks.js';
 import clearCompleted from './modules/clear-completed-task.js';
-import resetIndex from './modules/index-resetter';
+import resetIndex from './modules/index-resetter.js';
 
 let tasks = [];
 

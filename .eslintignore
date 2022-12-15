@@ -1,5 +1,0 @@
-# Ignore built files except build/index.js
-build/*
-!build/index.js
-/src/modules/index-resetter.js
-/src/modules/clear-completed-task.js

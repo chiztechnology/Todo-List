@@ -17,8 +17,7 @@ export const addTask = (element, tasks) => {
   return tasks;
 };
 
-export const updateTask = (description, objIndex) => {
-  const tasks = loadTasks('todo-list');
+export const updateTask = (description, objIndex, tasks) => {
   tasks[objIndex].description = description;
   // save updated books to local storage
   saveTask(tasks, 'todo-list');
@@ -91,7 +90,7 @@ export const showTask = (task) => {
   span.oninput = () => {
     const tasks = loadTasks('todo-list');
     const objIndex = tasks.findIndex(((obj) => obj.index === task.index));
-    updateTask(span.innerText, objIndex);
+    updateTask(span.innerText, objIndex, tasks);
   };
 
   span.onfocus = () => {
