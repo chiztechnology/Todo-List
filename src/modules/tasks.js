@@ -76,15 +76,14 @@ export const showTask = (task) => {
     if (task.completed) {
       const tasks = loadTasks('todo-list');
       const objIndex = tasks.findIndex(((obj) => obj.index === task.index));
-      updateStatus(task.completed, objIndex, tasks );
+      updateStatus(task.completed, objIndex, tasks);
       task.completed = !task.completed;
       // update task & refresh DOM
       span.classList.toggle('finished-task');
     } else {
-      
       const tasks = loadTasks('todo-list');
       const objIndex = tasks.findIndex(((obj) => obj.index === task.index));
-      updateStatus(task.completed, objIndex, tasks );
+      updateStatus(task.completed, objIndex, tasks);
       task.completed = !task.completed;
       span.classList.toggle('finished-task');
     }
