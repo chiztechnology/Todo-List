@@ -5,7 +5,7 @@ import {
   updateStatus,
 } from './src/modules/tasks.js';
 
-jest.mock('./src/modules/Save-and-load.js');
+import 'jest-localstorage-mock';
 
 describe('Add and remove Tasks', () => {
   it('Add task', () => {
