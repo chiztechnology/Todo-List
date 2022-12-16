@@ -2,6 +2,7 @@ import './styles/styles.css';
 import { loadTasks, saveTask } from './modules/Save-and-load.js';
 import { addTask, showTask } from './modules/tasks.js';
 import clearCompleted from './modules/clear-completed-task.js';
+import resetIndex from './modules/index-resetter.js';
 
 let tasks = [];
 
@@ -38,7 +39,8 @@ document.getElementById('todo-form').addEventListener('submit', (e) => {
 
 document.getElementById('clear-completed').addEventListener('click', (e) => {
   e.preventDefault();
-  saveTask(clearCompleted(loadTasks('todo-list')), 'todo-list');
+
+  saveTask(resetIndex(clearCompleted(loadTasks('todo-list'))), 'todo-list');
   // refresh DOM
   document.querySelector('.listTodo').innerHTML = '';
 
