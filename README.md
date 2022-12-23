@@ -2,14 +2,11 @@
 
 # Todo-List
 Simple TODO List project using webpack and ES6 Syntax
-
-<a name="readme-top"></a>
-
-<div align="left">
 This repository is for the activity Module 2 week 3 "Todo List: using Webpack".
 In this project, we built a simple todolist that allows users to add/remove tasks or mark them as finished from a list. we achieved it that by using JavaScript objects and arrays to dynamically modify the DOM and add basic events ; ES6; Webpack.
 
-</div>
+
+
 
 <!-- TABLE OF CONTENTS -->
 
